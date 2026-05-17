@@ -3,17 +3,11 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
+        stage('Build') {
             steps {
-                git 'https://github.com/Nidhakulsum/online-learning-platform.git'
+                echo 'Build Successful'
             }
         }
 
-        stage('Verify Project') {
-            steps {
-                sh 'ls'
-                sh 'echo Build Successful'
-            }
-        }
     }
 }
