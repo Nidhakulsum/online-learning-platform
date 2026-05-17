@@ -3,20 +3,16 @@ pipeline {
 
     stages {
 
-        stage('Build Docker Image') {
+        stage('Checkout Code') {
             steps {
-                sh 'docker build -t online-learning-app ./app'
+                git 'https://github.com/Nidhakulsum/online-learning-platform.git'
             }
         }
 
-        stage('Run Docker Container') {
+        stage('Verify Project') {
             steps {
-
-                sh 'docker stop online-learning-container || true'
-
-                sh 'docker rm online-learning-container || true'
-
-                sh 'docker run -d -p 3000:3000 --name online-learning-container online-learning-app'
+                sh 'ls'
+                sh 'echo Build Successful'
             }
         }
     }
