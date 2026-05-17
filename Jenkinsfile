@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/Nidhakulsum/online-learning-platform.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t online-learning-app ./app'
